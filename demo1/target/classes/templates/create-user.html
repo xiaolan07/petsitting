@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Create User</title>
+</head>
+<body>
+<h1>Create User</h1>
+<form action="/create" method="post" th:object="${user}">
+  <!-- Use th:field to bind form fields to model attributes -->
+  <label for="name">Email:</label>
+  <input type="text" id="name" th:field="*{email}">
+  <br>
+  <label for="age">Name:</label>
+  <input type="text" id="age" th:field="*{name}">
+  <br>
+  <label for="age">Password:</label>
+  <input type="text" id="password" th:field="*{password}">
+  <br>
+  <input type="submit" value="Create">
+</form>
+</body>
+</html>

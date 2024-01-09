@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="base/layout.html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+
+
+</head>
+<body>
+<table>
+  <tr>
+    <td>Id</td>
+    <td>email</td>
+    <td>name</td>
+
+  </tr>
+  <tbody th:each="user : ${userList}">
+  <tr>
+    <td th:text="${user.getId()}"></td>
+    <td th:text="${user.getEmail()}"></td>
+    <td th:text="${user.getName()}"></td>
+
+    <td>
+      <button type="button" class="btn btn-warning" th:if="${user.getPublier()}==false">Créer une annonce</button>
+      <button type="button" class="btn btn-warning">Modifier</button>
+      <button type="button" class="btn btn-warning">Supprimer</button>
+
+
+
+    </td>
+
+  </tr>
+
+  </tbody>
+
+</table>
+
+
+<button><a class="btn btn-success" href="/create-user">Créer user</a></button>
+
+</body>
+</html>

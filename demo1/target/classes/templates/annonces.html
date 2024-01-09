@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="base/layout.html">
+<head>
+  <meta charset="UTF-8">
+  <title>Annonces</title>
+</head>
+<body>
+<table>
+  <form action="/annonces/ville" method="get">
+    <label for="search">Ville:</label>
+    <input type="search" id="search" name="q" placeholder="Ville...">
+    <input type="submit" value="Rechercher">
+  </form>
+  <tr>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Ville</td>
+  </tr>
+  <tbody th:each="annonce : ${annoncesList}">
+  <tr>
+    <td th:text="${annonce.getName()}"></td>
+    <td th:text="${annonce.getTypeService()}"></td>
+    <td th:text="${annonce.getVille()}"></td>
+    <td>
+      <button type="button" class="btn btn-danger">Contacter</button>
+    </td>
+
+
+  </tr>
+
+
+  </tbody>
+
+</table>
+
+</body>
+</html>
